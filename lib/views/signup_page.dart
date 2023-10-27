@@ -105,7 +105,7 @@ class SignupPage extends StatelessWidget {
                 ElevatedButton(
                   child:
                     Text(
-                      "Entre aqui",
+                      "Inscrever-se",
                       style: TextStyle(
                         color: Colors.black,
                         decoration: TextDecoration.underline,
