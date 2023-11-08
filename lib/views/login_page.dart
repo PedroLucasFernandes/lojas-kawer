@@ -6,6 +6,11 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0XFF0E0F64),
+        automaticallyImplyLeading: true,
+        iconTheme: IconThemeData(color: Color(0XFFCAAC81)),
+      ),
       body: Container(
         padding: EdgeInsets.only(
           top: 20,

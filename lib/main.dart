@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lojas_kawer/views/first_page.dart';
+import 'package:lojas_kawer/views/home_page.dart';
 import 'package:lojas_kawer/views/login_page.dart';
 import 'package:lojas_kawer/views/signup_page.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/signup_page" : (context) => SignupPage(),
         "/login_page" : (context) => LoginPage(),
+        "/home_page" : (context) => HomePage(),
       },
       debugShowCheckedModeBanner: false,
       home: FirstPage(),
