@@ -108,7 +108,7 @@ class Item extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "R\$ $price",
+                            "R\$ ${price.toStringAsFixed(2)}",
                             style: TextStyle(
                               color: Colors.grey,
                               decoration: TextDecoration.lineThrough,
@@ -116,7 +116,7 @@ class Item extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "R\$ $newprice",
+                            "R\$ ${newprice!.toStringAsFixed(2)}",
                             style: TextStyle(
                               color: Color(0XFF3BB177),
                               fontSize: 16,
@@ -125,7 +125,7 @@ class Item extends StatelessWidget {
                         ],
                       )
                       : Text(
-                          "R\$ $price",
+                          "R\$ ${price.toStringAsFixed(2)}",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
@@ -142,7 +142,7 @@ class Item extends StatelessWidget {
                           ),
                           SizedBox(width: 4,),
                           Text(
-                            "R\$ $installment",
+                            "R\$ ${installment.toStringAsFixed(2)}",
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,

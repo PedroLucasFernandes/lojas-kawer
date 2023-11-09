@@ -13,9 +13,8 @@ class FirstPage extends StatelessWidget {
           right: 40,
         ),
         color: Color(0XFF0E0F64),
-
-          child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SizedBox(
               width: 128,
