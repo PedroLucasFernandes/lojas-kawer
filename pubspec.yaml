@@ -58,6 +58,17 @@ flutter:
     - assets/image1.png
     - assets/image2.png
     - assets/image3.png
+    - assets/acessorios.png
+    - assets/beleza.png
+    - assets/casa.png
+    - assets/cozinha.png
+    - assets/tecnologia.png
+    - assets/image4.png
+    - assets/image5.png
+    - assets/afiador.png
+    - assets/cafeteira.png
+    - assets/airfryer.png
+    - assets/utensilios.png
 
   uses-material-design: true
 

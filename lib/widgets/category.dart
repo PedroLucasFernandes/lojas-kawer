@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class Category extends StatelessWidget {
 
   final String name;
-  final Image? image;
+  final String image;
   const Category({
       super.key,
-      this.image, 
+      required this.image, 
       required this.name, 
     });
 
@@ -16,13 +16,18 @@ class Category extends StatelessWidget {
       children: [
         Column(
           children: [
-            Container(
-              width: 109,
-              height: 102,
-              child: ClipOval(
-                child: Image.asset(
-                  "assets/logo.png",
-                  fit: BoxFit.cover,
+            InkWell(
+              onTap: () {
+
+              },
+              child: Container(
+                width: 102,
+                height: 102,
+                child: ClipOval(
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
