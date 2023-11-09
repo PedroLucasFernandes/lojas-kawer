@@ -67,10 +67,35 @@ class Item extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset(
-                        image,
-                        height: 200,
-                        width: 200,
+                      Stack(
+                        children: [
+                          Image.asset(
+                            image,
+                            height: 200,
+                            width: 200,
+                          ),
+                          Positioned(
+                            top: 15,
+                            right: 2,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Color(0XFF0E0F64).withOpacity(0.5),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 50,
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: AspectRatio(
+                                  aspectRatio: 405 / 115,
+                                  child: Image.asset(
+                                    'assets/logodeitada.png',
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       Text(
                         name,
