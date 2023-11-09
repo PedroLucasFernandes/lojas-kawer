@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: AppBar().preferredSize,
-        child: Bar(),
+        child: Bar(isMenu: false,),
       ),
       backgroundColor: Color(0XFFE2EEF7),
       body: SingleChildScrollView(
