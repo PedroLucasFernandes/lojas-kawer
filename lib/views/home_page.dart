@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:lojas_kawer/widgets/appbar.dart';
+import 'package:lojas_kawer/widgets/benefits.dart';
 import 'package:lojas_kawer/widgets/category.dart';
 import 'package:lojas_kawer/widgets/footer_text.dart';
 import 'package:lojas_kawer/widgets/item.dart';
@@ -19,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   List<String> _imagestop = [
     'assets/image1.png',
     'assets/image2.png',
-    'assets/image3.png',
+    'assets/image3.png',  
   ];
 
   int _currentPagebottom = 0;
@@ -29,9 +31,47 @@ class _HomePageState extends State<HomePage> {
     'assets/image5.png',
   ];
 
+  int currentindex = 0;
+  late PageController _pageControllerbenefits;
+  List<Benefits> _benefits = [
+    Benefits(
+      icon: Icon(
+        Icons.person,
+        size: 36,  
+      ),
+      title: "Suporte Qualificado",
+      description: "Possuímos um time completo para te atender e tirar as suas dúvidas"
+    ),
+    Benefits(
+      icon: Icon(
+        Icons.person,
+        size: 36,  
+      ),
+      title: "Benefício 2",
+      description: "Descrição benefício 2"
+    ),
+    Benefits(
+      icon: Icon(
+        Icons.person,
+        size: 36,  
+      ),
+      title: "Benefício 3",
+      description: "Descrição benefício 3"
+    ),
+    Benefits(
+      icon: Icon(
+        Icons.person,
+        size: 36,  
+      ),
+      title: "Benefício 4",
+      description: "Descrição benefício 4"
+    ),
+  ];
+
   @override
   void initState() {
     super.initState();
+    _pageControllerbenefits = PageController(initialPage: 0);
     Timer.periodic(Duration(seconds: 3), (timer) {
       if (_currentPagetop < _imagestop.length - 1) {
         _currentPagetop++;
@@ -241,6 +281,61 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white
                 ),
               )
+            ),
+            SizedBox(height: 24,),
+            LayoutBuilder(
+              builder: (context, constraints) => SizedBox(
+                width: double.infinity,
+                height: 165,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: PageView.builder(
+                        itemCount: _benefits.length,
+                        controller: _pageControllerbenefits,
+                        physics: PageScrollPhysics(),
+                        onPageChanged: (int index) {
+                          setState(() {
+                            currentindex = index;
+                          });
+                        },
+                        itemBuilder: (context, index) => Column(
+                          children: [
+                            _benefits[index],
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: SizedBox(
+                        height: 20,
+                        child: ListView.builder(
+                          itemCount: _benefits.length,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (_, index) => Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AnimatedContainer(
+                                duration: Duration(milliseconds: 300,),
+                                curve: Curves.ease,
+                                margin: EdgeInsets.symmetric(horizontal: 3),
+                                width: currentindex == index ? 25 : 8,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: currentindex == index ? Colors.black : Colors.grey,
+                                  borderRadius: BorderRadius.circular(10)
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             SizedBox(height: 24,),
             Container(
