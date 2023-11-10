@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lojas_kawer/widgets/appbar.dart';
 import 'package:lojas_kawer/widgets/menu_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+  MenuPage({super.key});
+
+  final Uri facebookUrl = Uri.parse('https://web.facebook.com/lojakawer');
+  final Uri instagramUrl= Uri.parse('https://www.instagram.com/lojakawer/');
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class MenuPage extends StatelessWidget {
           children: [
             MenuText(title: "Início",
               onPressed: () {
-      
+
               },
             ),
             MenuText(title: "Todos os produtos",
@@ -79,8 +83,12 @@ class MenuPage extends StatelessWidget {
               icon: Icon(Icons.facebook,
                 size: 20,
               ),
-              onPressed: (){
-                
+              onPressed: () async {  
+                try {
+                  await launchUrl(facebookUrl);
+                } catch (e) {
+
+                }
               },
             ),
             MenuText(
@@ -88,8 +96,12 @@ class MenuPage extends StatelessWidget {
               icon: Icon(Icons.camera_alt_outlined,
                 size: 20,
               ),
-              onPressed: (){
-      
+              onPressed: () async {  
+                try {
+                  await launchUrl(instagramUrl);
+                } catch(e) {
+                  
+                }
               },
             ),
           ],
