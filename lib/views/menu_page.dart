@@ -6,6 +6,9 @@ import 'package:url_launcher/url_launcher.dart';
 class MenuPage extends StatelessWidget {
   MenuPage({super.key});
 
+  final String phoneNumber = "+55 (11) 9 6737-1944";
+  final String emailAddress = "lojakawer@gmail.com";
+
   final Uri facebookUrl = Uri.parse('https://web.facebook.com/lojakawer');
   final Uri instagramUrl= Uri.parse('https://www.instagram.com/lojakawer/');
 
@@ -69,12 +72,26 @@ class MenuPage extends StatelessWidget {
               icon: Icon(Icons.phone_in_talk_outlined,
                 size: 20,
               ),
+              onPressed: () async {  
+                try {
+                  await launchUrl(Uri.parse("tel:$phoneNumber"));
+                } catch (e) {
+
+                }
+              },
             ),
             MenuText(
               title: "lojakawer@gmail.com",
               icon: Icon(Icons.email_outlined,
                 size: 20,
-              ),  
+              ),
+              onPressed: () async {  
+                try {
+                  await launchUrl(Uri.parse("mailto:$emailAddress"));
+                } catch (e) {
+
+                }
+              },
             ),
             Divider(),
             Text("SIGA-NOS"),

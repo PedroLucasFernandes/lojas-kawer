@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class MenuText extends StatelessWidget {
 
   final String title;
-  final Function()? onPressed;
+  final Function() onPressed;
   final Icon? icon;
   const MenuText({
       super.key,
       required this.title,
-      this.onPressed,
+      required this.onPressed,
       this.icon,
     });
 
@@ -23,7 +23,6 @@ class MenuText extends StatelessWidget {
           ],
         )
         : SizedBox(),
-        onPressed != null ?
         InkWell(
           onTap: onPressed,
           child: Text(
@@ -32,14 +31,6 @@ class MenuText extends StatelessWidget {
               color: Colors.grey,
               fontSize: 16,
             ),
-          ),
-        )
-        :
-        Text(
-          title,
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 16,
           ),
         )
       ],
