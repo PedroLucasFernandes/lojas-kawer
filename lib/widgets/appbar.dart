@@ -64,7 +64,7 @@ class Bar extends StatelessWidget implements PreferredSizeWidget {
               SizedBox(width: 8,),
               InkWell(
                 onTap: () {
-
+                  Navigator.pushNamed(context, "/profile_page");
                 },
                 child: Icon(
                   Icons.person_2_outlined,

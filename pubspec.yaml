@@ -67,6 +67,7 @@ flutter:
     - assets/cafeteira.png
     - assets/airfryer.png
     - assets/utensilios.png
+    - assets/perfil.png
 
   uses-material-design: true
 
