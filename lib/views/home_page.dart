@@ -36,35 +36,35 @@ class _HomePageState extends State<HomePage> {
   List<Benefits> _benefits = [
     Benefits(
       icon: Icon(
-        Icons.person,
+        Icons.archive_outlined,
         size: 36,  
       ),
-      title: "Suporte Qualificado",
-      description: "Possuímos um time completo para te atender e tirar as suas dúvidas"
+      title: "Frete Grátis para todo o Brasil",
+      description: "Receba seu pedido no conforto da sua casa com entrega garantida e segurada pelos Correios."
     ),
     Benefits(
       icon: Icon(
-        Icons.person,
+        Icons.shopping_cart_checkout_outlined,
         size: 36,  
       ),
-      title: "Benefício 2",
-      description: "Descrição benefício 2"
+      title: "Satisfação ou Reembolso",
+      description: "Caso você não fique satisfeito nós devolvemos o seu dinheiro em até 7 dias."
     ),
     Benefits(
       icon: Icon(
-        Icons.person,
+        Icons.chat_bubble_outline_outlined,
         size: 36,  
       ),
-      title: "Benefício 3",
-      description: "Descrição benefício 3"
+      title: "Suporte Profissional",
+      description: "Possuímos um suporte de extrema qualidade que responde em até 24h. E-mail: lojakawer@gmail.com"
     ),
     Benefits(
       icon: Icon(
-        Icons.person,
+        Icons.credit_card_outlined,
         size: 36,  
       ),
-      title: "Benefício 4",
-      description: "Descrição benefício 4"
+      title: "Compra Segura",
+      description: "Ambiente seguro e certificado pela Norton™."
     ),
   ];
 
